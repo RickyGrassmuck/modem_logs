@@ -5,9 +5,15 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"sort"
 )
 
 const chunkSize = 64000
+
+func CalculateSpread(values []float64) float64 {
+	sort.Float64s(values)
+	return values[len(values)-1] - values[0]
+}
 
 func DeepCompare(file1, file2 string) (bool, error) {
 	// Check file size ...

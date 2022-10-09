@@ -1,0 +1,20 @@
+version: '3'
+
+dotenv:
+  - ".env"
+
+vars:
+  SOURCE_DIR: "src"
+
+tasks:
+  build:
+    dir: "{{ .SOURCE_DIR }}"
+    cmds:
+      - go build -v -o ../bin/modem_stats main.go 
+    generates:
+      - "bin/modem_stats"
+  
+  run:
+    deps: ["build"]
+    cmds:  
+      - bin/modem_stats

@@ -1,4 +1,10 @@
 *.txt
 *.txt.last
+
 modem_logger*
 modem_logs
+bin/*
+
+**/.env
+!**/.gitkeep
+

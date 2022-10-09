@@ -129,6 +129,9 @@ func (c *ConnectionData) SanitizedDetails() *Connection {
 	return &details
 }
 
+func (d *ConnectionDetails) ToInflux() {
+
+}
 func (d *ConnectionDetails) ToCSV() [][]string {
 	reader := csv.NewReader(strings.NewReader(d.Raw))
 	records, _ := reader.ReadAll()
